@@ -123,9 +123,9 @@
 				<div class="display-t">
 					<div class="display-tc">
 						<div class="col-md-10 col-md-offset-1">
-							<div class="col-md-6 col-sm-6 text-center">
+							<div class="col-md-6 col-sm-6 text-center" id="akad-box">
 								<div class="event-wrap animate-box">
-									<h3>Akad & Resepsi Pertama di Kediaman Keluarga Suhermanto</h3>
+									<h3>Akad & Resepsi</h3>
 									<div class="event-col">
 										<i class="icon-calendar"></i>
 										<span>29 April 2025</span>
@@ -139,9 +139,9 @@
 									<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.4502711322025!2d113.21188367578269!3d-7.741970576749093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7adea45edbceb%3A0xf6fcce6359538d78!2sGg.%20Surjo%2C%20Mayangan%2C%20Kec.%20Mayangan%2C%20Kota%20Probolinggo%2C%20Jawa%20Timur%2067218!5e0!3m2!1sid!2sid!4v1743747813405!5m2!1sid!2sid" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 								</div>
 							</div>
-							<div class="col-md-6 col-sm-6 text-center">
+							<div class="col-md-6 col-sm-6 text-center" id="resepsi-box">
 								<div class="event-wrap animate-box">
-									<h3>Resepsi Kedua di Kediaman Keluarga Imam Djauhari</h3>
+									<h3>Resepsi</h3>
 									<div class="event-col">
 										<i class="icon-calendar"></i>
 										<span>04 Mei 2025</span>
@@ -282,7 +282,25 @@
 				}, { once: true });
 			  });
 		  }
+
+		const urlParams = new URLSearchParams(window.location.search);
+		const keluarga = urlParams.get('keluarga');
+
+		const akadBox = document.getElementById('akad-box');
+		const resepsiBox = document.getElementById('resepsi-box');
+
+		if (keluarga === 'imam') {
+		akadBox.style.display = 'none';
+		resepsiBox.classList.remove('col-md-6');
+		resepsiBox.classList.add('col-md-12');
+		} else if (keluarga === 'suhermanto') {
+		resepsiBox.style.display = 'none';
+		akadBox.classList.remove('col-md-6');
+		akadBox.classList.add('col-md-12');
+		}
+
 		});
+
 	  </script>
 	  
 	</body>
