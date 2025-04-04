@@ -5,7 +5,19 @@ $(document).ready(function() {
   let currentDate = new Date();
 
   // Target future date/24 hour time/Timezone
-  let targetDate = moment.tz("2025-04-29 15:00", "Asia/Jakarta");
+  // let targetDate = moment.tz("2025-04-29 15:00", "Asia/Jakarta");
+  const urlParams = new URLSearchParams(window.location.search);
+  const keluarga = urlParams.get('keluarga');
+
+  // Tentukan tanggal berdasarkan parameter keluarga
+  let targetDate;
+
+  if (keluarga === 'imam') {
+    targetDate = moment.tz("2025-05-04 08:00", "Asia/Jakarta");
+  } else {
+    // default atau suhermanto
+    targetDate = moment.tz("2025-04-29 15:00", "Asia/Jakarta");
+  }
 
   // Calculate the difference in seconds between the future and current date
   let diff = targetDate / 1000 - currentDate.getTime() / 1000;
