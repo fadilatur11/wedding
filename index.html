@@ -213,7 +213,7 @@
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center">
 					<div class="event-wrap animate-box" id="event-box">
-						<!-- <h3>Akad & Resepsi</h3> -->
+						<h3>Akad & Resepsi</h3>
 						
 						<div class="event-detail">
 							<div class="event-col">
@@ -352,10 +352,11 @@
 			return str.toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
 		}
 
-		
+		if (invitation) {
 			const nameFormatted = toTitleCase(decodeURIComponent(invitation));
     		const invitationText = `Kepada Yth. Bapak/Ibu/Saudara/i <b>${nameFormatted}</b>`;
 			document.querySelector(".invitation").innerHTML = invitationText;
+		}
 
 
 
