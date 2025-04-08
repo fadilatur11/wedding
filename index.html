@@ -352,11 +352,10 @@
 			return str.toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
 		}
 
-		if (invitation) {
+		
 			const nameFormatted = toTitleCase(decodeURIComponent(invitation));
     		const invitationText = `Kepada Yth. Bapak/Ibu/Saudara/i <b>${nameFormatted}</b>`;
 			document.querySelector(".invitation").innerHTML = invitationText;
-		}
 
 
 
